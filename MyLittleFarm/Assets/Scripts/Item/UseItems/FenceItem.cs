@@ -2,8 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Fence : IN.GridBaseItem {
+public class FenceItem : IN.GridBaseItem {
     public Sprite[] fenceSprites;
+
+    public FenceObject fencePrefab;
 
     public float range = 1.5f;
 
@@ -17,8 +19,9 @@ public class Fence : IN.GridBaseItem {
 
     public override void UpdateFunction(CharacterController2D controller, Vector2 mousePosition) {
         var gridPosition = Vector2Int.FloorToInt(mousePosition) + Vector2.one * 0.5f;
+        var characterPosition = Vector2Int.FloorToInt(controller.transform.position) + Vector2.one * 0.5f;
 
-        var len = ((Vector2)controller.transform.position - gridPosition).magnitude;
+        var len = (characterPosition - gridPosition).magnitude;
 
         GameManager.Instance.itemPreview.sprite.sprite = fenceSprites[3];
 
@@ -32,6 +35,17 @@ public class Fence : IN.GridBaseItem {
     }
 
     protected override IEnumerator UseInGrid(CharacterController2D controller, Vector3Int selected) {
+        Vector2 gridPosition = (Vector2Int)selected + Vector2.one * 0.5f;
+        var characterPosition = Vector2Int.FloorToInt(controller.transform.position) + Vector2.one * 0.5f;
+
+        var len = (characterPosition - gridPosition).magnitude;
+
+        if (len <= range) {
+            MapObjectManager.Instance.SpawnObject(fencePrefab.gameObject, selected, selected.z, true);
+        } else {
+
+        }
+
         yield return null;
     }
 }
