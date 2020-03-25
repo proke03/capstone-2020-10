@@ -9,6 +9,8 @@ TagManager:
   - HandParent
   - FieldItem
   - Interactable
+  - MainCollider
+  - Size
   layers:
   - Default
   - TransparentFX
@@ -22,7 +24,7 @@ TagManager:
   - Hitable
   - UIcontents
   - Interactable
-  - 
+  - Size
   - 
   - 
   - 
