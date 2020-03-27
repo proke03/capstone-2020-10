@@ -3,13 +3,10 @@
 
 ## 내용에 아래와 같은 내용들을 추가하세요.
 
-### 1. 프로잭트 소개
-학교에서 배워온 자료 구조, 알고리즘, 디자인 패턴, 그래픽스, 데이터베이스 등을 활용하   여 파밍 시뮬레이션 게임을 제작한다. 퍼포먼스를 많이 요구하는 게임이 아니기에 상대   적으로 생산성이 좋고 팀원들에게 익숙한 유니티 엔진을 사용하여 개발한다.
+### 1. 프로잭트 개요
+학교에서 배워온 자료 구조, 알고리즘, 디자인 패턴, 그래픽스, 데이터베이스 등을 활용하여 파밍 시뮬레이션 게임을 제작한다. 퍼포먼스를 많이 요구하는 게임이 아니기에 상대적으로 생산성이 좋고 팀원들에게 익숙한 유니티 엔진을 사용하여 개발한다.
 
-### 2. 소개 영상
-[![Video Label](http://img.youtube.com/vi/k6xTlyUFXvk/0.jpg)](https://youtu.be/k6xTlyUFXvk?t=0s)
-
-### 3. 팀 소개
+### 2. 팀 소개
 김범헌
 -개인적인 정으로 아직 역할 배정 못 함.
 
@@ -39,8 +36,13 @@
 -팀장
 -기획 문서 작성 보조 및 기술 챕터 작성, 검토
 -프로그래밍(릭터 컨트롤러 구현, 전투 시스템 구현, 2.5D 기반 타일 시스템 구현, 그리드 기반 배치 시스템 구현, 아이템 시스템 구현)
-### 4. 사용법
-추후 작성.
 
-### 5. 기타
+### 3. Abstract (영문 요약)
+My Little Farm is farming simulation video game like Stardew Valley. While Stardew Valley emphasizes the interaction and events with the villagers, My Little Farm will focus on the combat and crafting system.
+
+### 4. 소개 영상
+[![Video Label](http://img.youtube.com/vi/k6xTlyUFXvk/0.jpg)](https://youtu.be/k6xTlyUFXvk?t=0s)
+
+
+### 5. 결과 영상
 추후 작성.
