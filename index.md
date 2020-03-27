@@ -1,6 +1,5 @@
 ## 마이 리틀 팜
-
-**팀페이지 주소** -> https://kookmin-sw.github.io/capstone-2020-10/
+![title_crop](https://user-images.githubusercontent.com/18157660/77714274-f0869080-701b-11ea-8ce8-e6f3d0ecb972.png)
 
 ### 1. 프로젝트 개요
 학교에서 배워온 자료 구조, 알고리즘, 디자인 패턴, 그래픽스, 데이터베이스 등을 활용하여 파밍 시뮬레이션 게임을 제작한다. 퍼포먼스를 많이 요구하는 게임이 아니기에 상대적으로 생산성이 좋고 팀원들에게 익숙한 유니티 엔진을 사용하여 개발한다.
@@ -52,7 +51,6 @@ My Little Farm is farming simulation video game like Stardew Valley. While Stard
 
 ### 4. 소개 영상
 [![Video Label](http://img.youtube.com/vi/k6xTlyUFXvk/0.jpg)](https://youtu.be/k6xTlyUFXvk?t=0s)
-
 
 ### 5. 결과 영상
 추후 작성.
