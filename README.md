@@ -29,9 +29,7 @@
 프로젝트
 
 ### 2. 소개 영상
-https://youtu.be/k6xTlyUFXvk
-<iframe width="560" height="315" src="https://www.youtube.com/embed/k6xTlyUFXvk" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-프로젝트 소개하는 영상을 추가하세요
+[![Video Label](http://img.youtube.com/vi/k6xTlyUFXvk/0.jpg)](https://youtu.be/k6xTlyUFXvk?t=0s)
 
 ### 3. 팀 소개
 
