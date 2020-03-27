@@ -1,4 +1,5 @@
 ## 마이 리틀 팜
+![title_crop](https://user-images.githubusercontent.com/18157660/77714274-f0869080-701b-11ea-8ce8-e6f3d0ecb972.png)
 
 **팀페이지 주소** -> https://kookmin-sw.github.io/capstone-2020-10/
 
@@ -52,7 +53,6 @@ My Little Farm is farming simulation video game like Stardew Valley. While Stard
 
 ### 4. 소개 영상
 [![Video Label](http://img.youtube.com/vi/k6xTlyUFXvk/0.jpg)](https://youtu.be/k6xTlyUFXvk?t=0s)
-
 
 ### 5. 결과 영상
 추후 작성.
