@@ -5,7 +5,7 @@ using UnityEngine.Tilemaps;
 
 namespace IN {
 
-    public abstract class GridBaseItem : Item {
+    public abstract class PlaceableItem : Item {
         public override void Activated(CharacterController2D controller) {
             //CursorController.Instance.SetMouseTargetMode(value: true, interaction: false);
             //CursorController.Instance.SetAutoGridPosition(value: true, interaction: false);

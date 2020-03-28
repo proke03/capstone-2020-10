@@ -25,23 +25,18 @@ public class ItemUseModule : CharacterModule {
 
         itemOnHand.UpdateFunction(controller, mousePosition);
 
+        int direction = 1;
+        float angle = 0;
+
         /// IRotateable 인터페이스가 포함된 아이템은 회전 가능하도록 함
         if (itemOnHand is IN.IRotateable) {
-            Vector2 position = controller.hand.position;
+            Vector2 position = controller.hand.Position;
 
-            int direction = (mousePosition.x < position.x) ? -1 : 1;
-
-            float angle = Mathf.Atan2(mousePosition.y - position.y, mousePosition.x - position.x) * Mathf.Rad2Deg;
-
-            var scale = controller.hand.localScale;
-
-            scale.x = direction * Mathf.Abs(scale.x);
-            scale.y = direction * Mathf.Abs(scale.y);
-
-            controller.hand.localScale = scale;
-
-            controller.hand.localRotation = Quaternion.Euler(0, 0, direction * angle);
+            direction = (mousePosition.x < position.x) ? -1 : 1;
+            angle = Mathf.Atan2(mousePosition.y - position.y, mousePosition.x - position.x) * Mathf.Rad2Deg;
         }
+
+        controller.hand.Rotate(angle, direction);
 
         /// 아이템 사용중이지 않고 마우스 왼쪽 버튼을 누른 경우 아이템 사용
         if (!alreadyFlag && InputManager.GetMouseButtonDown(0)) {

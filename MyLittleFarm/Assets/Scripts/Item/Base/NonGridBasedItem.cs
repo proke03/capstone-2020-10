@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace IN {
 
-    public abstract class NonGridBaseItem : Item {
+    public abstract class NonGridBasedItem : Item {
 
     }
 

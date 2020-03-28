@@ -6,7 +6,6 @@ TagManager:
   tags:
   - Tilemap
   - TilemapGroup
-  - HandParent
   - FieldItem
   - Interactable
   - MainCollider

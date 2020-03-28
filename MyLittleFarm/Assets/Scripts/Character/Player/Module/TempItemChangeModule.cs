@@ -28,8 +28,7 @@ public class TempItemChangeModule : CharacterModule {
                 foreach (var item in items) item.gameObject.SetActive(false);
 
                 /// 회전 가능한 아이템을 빠르게 다른 아이템으로 바꿨다가 돌려놓으면 잠깐 0도로 돌아온 뒤 마우스 각도로 이동하는 버그가 있음.
-                controller.hand.localRotation = Quaternion.identity;
-                controller.hand.localScale = new Vector3(Mathf.Abs(controller.hand.localScale.x), Mathf.Abs(controller.hand.localScale.y), controller.hand.localScale.z);
+                controller.hand.Reset();
 
                 if (prevIndex >= 0) items[prevIndex].Deactivated(controller);
 

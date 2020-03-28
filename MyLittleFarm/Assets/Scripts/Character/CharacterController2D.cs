@@ -16,13 +16,13 @@ public class CharacterController2D : MonoBehaviour {
     /// 캐릭터가 아이템을 들고 있을 손의 부모 오브젝트
     /// </summary>
     [System.NonSerialized]
-    public Transform hand;
+    public CharacterHand hand;
 
 
     private void Awake() {
         rigidbody = GetComponent<Rigidbody2D>();
         collider = transform.Find("Collider")?.GetComponent<BoxCollider2D>();
-        hand = GameObject.FindWithTag("HandParent")?.transform;
+        hand = GetComponentInChildren<CharacterHand>();
 
         var modules = GetComponents<CharacterModule>();
         foreach (var module in modules) {

@@ -11,9 +11,9 @@ namespace IN {
         protected IEnumerator Animation(CharacterController2D controller) {
             var sequence = DOTween.Sequence();
 
-            sequence.Append(controller.hand.DOLocalRotate(new Vector3(0, 0, 120), 0.2f).SetOptions(false));
-            sequence.Append(controller.hand.DOLocalRotate(new Vector3(0, 0, -90), 0.1f).SetOptions(false));
-            sequence.Append(controller.hand.DOLocalRotate(new Vector3(0, 0, 0), 0.1f).SetOptions(true));
+            sequence.Append(controller.hand.RotatePlusAngle(120, 0.2f));
+            sequence.Append(controller.hand.RotatePlusAngle(-90, 0.1f));
+            sequence.Append(controller.hand.RotatePlusAngle(0, 0.1f));
 
             yield return sequence.WaitForCompletion();
         }

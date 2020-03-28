@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class FenceItem : IN.GridBaseItem {
+public class FenceItem : IN.PlaceableItem {
     public Sprite[] fenceSprites;
 
     public FenceObject fencePrefab;

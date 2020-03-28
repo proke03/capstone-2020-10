@@ -1,7 +1,7 @@
 ﻿//using System.Collections;
 //using System.Collections.Generic;
 //using UnityEngine;
-//using CreativeSpore.SuperTilemapEditor;
+////using CreativeSpore.SuperTilemapEditor;
 //using DG.Tweening;
 
 //public class SwordTool : ToolBase {
@@ -68,8 +68,10 @@
 //    }
 
 //    public override IEnumerator Animation() {
-//        if (combo == 0) yield return transform.parent.DOLocalRotate(Vector3.forward * -220, weaponData.swingAnimationSpeed).SetRelative().SetOptions(false).WaitForCompletion();
-//        else            yield return transform.parent.DOLocalRotate(Vector3.forward * 220, weaponData.swingAnimationSpeed).SetRelative().SetOptions(false).WaitForCompletion();
+//        if (combo == 0)
+//            yield return transform.parent.DOLocalRotate(Vector3.forward * -220, weaponData.swingAnimationSpeed).SetRelative().SetOptions(false).WaitForCompletion();
+//        else
+//            yield return transform.parent.DOLocalRotate(Vector3.forward * 220, weaponData.swingAnimationSpeed).SetRelative().SetOptions(false).WaitForCompletion();
 //    }
 
 //    private List<HitCheckModule> hitObjects = new List<HitCheckModule>();
