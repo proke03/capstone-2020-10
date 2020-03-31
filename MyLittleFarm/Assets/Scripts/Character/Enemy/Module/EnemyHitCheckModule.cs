@@ -16,6 +16,7 @@ public class EnemyHitCheckModule : HitCheckModule {
     /// <param name="power">공격 받았을 때 받는 힘의 세기</param>
     public override void OnHit(Vector2 direction, float power) {
         //movementModule.currentVelocity += direction * power;
+        movementModule.rigidbody.AddForce(direction * power);
 
         Debug.Log("hit");
     }

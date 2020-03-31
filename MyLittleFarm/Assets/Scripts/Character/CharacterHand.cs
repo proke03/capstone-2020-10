@@ -20,10 +20,24 @@ public class CharacterHand : MonoBehaviour {
     [System.NonSerialized]
     public float plusAngle;
 
+    // 손이 기본적으로 위치해 있을 각도
     [System.NonSerialized]
     public float defaultAngle;
 
+    // 마우스와 손 사이 각도
+    [System.NonSerialized]
+    public float angle;
+
+    // 마우스 손 사이 각 + 기본 손 각도
+    public float Angle {
+        get {
+            return angle + Mathf.Sign(transform.localScale.x) * defaultAngle;
+        }
+    }
+
     public void Rotate(float angle, int direction) {
+        this.angle = angle;
+
         var scale = transform.localScale;
 
         scale.x = direction * Mathf.Abs(scale.x);

@@ -64,7 +64,7 @@ public class P3DObject : MonoBehaviour {
         zPosition = z;
 
         foreach (var col in colliders) {
-            if (!col.CompareTag("MainCollider")) continue;
+            if (!(col.CompareTag("MainCollider") || col.CompareTag("Hitable"))) continue;
             col.gameObject.layer = 20 + Mathf.FloorToInt(zPosition);
         }
 

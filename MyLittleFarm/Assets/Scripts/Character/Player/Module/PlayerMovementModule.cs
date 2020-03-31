@@ -5,13 +5,19 @@ using UnityEngine;
 public class PlayerMovementModule : MovementModule {
     public float speed = 4;
 
+    [System.NonSerialized]
+    public int direction;
+
+    [System.NonSerialized]
+    public float angle;
+
     private Vector2 input;
 
     public override void ModuleUpdate() {
         Vector2 characterPosition = controller.transform.position;
         Vector2 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
 
-        int direction = (mousePosition.x < characterPosition.x) ? -1 : 1;
+        direction = (mousePosition.x < characterPosition.x) ? -1 : 1;
 
         var s = controller.transform.localScale;
         s.x = direction * Mathf.Abs(s.x);

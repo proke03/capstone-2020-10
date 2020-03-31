@@ -18,8 +18,8 @@
 
 			LOD 200
 			Cull Off
-			//ZWrite Off
-			//ZTest Always
+			ZWrite Off
+			ZTest Always
 
 			CGPROGRAM
 			// Lambert lighting model, and enable shadows on all light types
