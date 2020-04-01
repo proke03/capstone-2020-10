@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CharacterController2D : MonoBehaviour {
+public class CharacterController2D : P3DObject {
     [System.NonSerialized]
     public List<CharacterModule> moduleList = new List<CharacterModule>();
 
@@ -18,8 +18,9 @@ public class CharacterController2D : MonoBehaviour {
     [System.NonSerialized]
     public CharacterHand hand;
 
-
     private void Awake() {
+        P3DInitialize();
+
         rigidbody = GetComponent<Rigidbody2D>();
         collider = transform.Find("Collider")?.GetComponent<BoxCollider2D>();
         hand = GetComponentInChildren<CharacterHand>();

@@ -12,6 +12,8 @@ public class P3DObject : MonoBehaviour {
     [Range(0.0f, 8.0f)]
     public float zPosition = 0.0f;
 
+    public int CurrentLayer => 20 + Mathf.FloorToInt(zPosition);
+
     /// <summary>
     /// 참이면 -45도 각도 기울인 뒤 세로로 늘려줌(세움)
     /// </summary>
@@ -37,6 +39,10 @@ public class P3DObject : MonoBehaviour {
     }
 
     private void Awake() {
+        P3DInitialize();
+    }
+
+    protected void P3DInitialize() {
         p3dTarget = transform.Find("P3DObject");
 
         colliders = transform.GetComponentsInChildren<BoxCollider2D>();
@@ -65,7 +71,7 @@ public class P3DObject : MonoBehaviour {
 
         foreach (var col in colliders) {
             if (!(col.CompareTag("MainCollider") || col.CompareTag("Hitable"))) continue;
-            col.gameObject.layer = 20 + Mathf.FloorToInt(zPosition);
+            col.gameObject.layer = CurrentLayer;
         }
 
         transform.localPosition = new Vector3(transform.localPosition.x, transform.localPosition.y, -zPosition - 0.5f);

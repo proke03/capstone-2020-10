@@ -71,8 +71,7 @@ namespace IN {
             bool impulseFlag = true;
 
             while (true) {
-                // 나중에 CharacterController2D가 P3DObject 상속받게 해서 z값 가져오도록 변경해야 함.
-                int z = 20 + Mathf.FloorToInt(-controller.transform.position.z);
+                int z = controller.CurrentLayer;
                 var hits = Physics2D.OverlapBoxAll(bounds.center, bounds.size, _angle, 1 << z).Where(x => x.CompareTag("Hitable")).ToList();
 
                 for (int i = 0; i < Mathf.Min(hits.Count, /*임시 hitableCount*/1); i++) {
