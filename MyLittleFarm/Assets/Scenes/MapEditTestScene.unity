@@ -1376,6 +1376,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5c3250b449984d34cae6513b5e103a96, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  player: {fileID: 937371835}
   rectTarget: {fileID: 1583970364}
   triTarget: {fileID: 1459359239}
   interactionIcon: {fileID: 1591728306}
@@ -6865,7 +6866,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1113357287}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.18, y: -0.1, z: 0}
+  m_LocalPosition: {x: 0.25, y: 0.25, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1605136100}
@@ -8337,7 +8338,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 4c2fa8c66bf2c2d4ca6831b7cf2b5524, type: 2}
+  - {fileID: 2100000, guid: 8337523b5982c7349a444ebf7ea4b22a, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

@@ -30,8 +30,8 @@ namespace IN {
         private float tempAngle;
 
         public override void Activated(CharacterController2D controller) {
-            controller.hand.defaultAngle = 40;
-            controller.hand.Origin = new Vector2(0.18f, 0.25f);
+            controller.hand.defaultAngle = 20;
+            controller.hand.Origin = new Vector2(0.25f, 0.25f);
         }
 
         public override void Deactivated(CharacterController2D controller) {
@@ -101,7 +101,7 @@ namespace IN {
                 //i.Clear();
             }
             hitObjects.Clear();
-        }
+        }   
 
         private void OnDrawGizmos() {
             Gizmos.color = Color.red;

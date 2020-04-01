@@ -5,6 +5,8 @@ using UnityEngine;
 public class GameManager : MonoBehaviour {
     public static GameManager Instance;
 
+    public CharacterController2D player;
+
     public GameObject rectTarget;
     public GameObject triTarget;
     public GameObject interactionIcon;
