@@ -35,7 +35,7 @@ public class ItemUseModule : CharacterModule {
         float angle = 0;
 
         /// IRotateable 인터페이스가 포함된 아이템은 회전 가능하도록 함
-        if (itemOnHand is IN.IRotateable) {
+        if (itemOnHand is IN.IRotatable) {
             Vector2 position = controller.hand.Position;
 
             angle = Mathf.Atan2(mousePosition.y - position.y, mousePosition.x - position.x) * Mathf.Rad2Deg;

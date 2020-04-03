@@ -41,6 +41,18 @@ public class TimeManager : MonoBehaviour {
         StartCoroutine(TimeUpdate());
     }
 
+    //float tick = 0;
+
+    //private void Update() {
+    //    tick += Time.deltaTime;
+    //    if (tick >= 1.0f) {
+
+    //        time += 10;
+
+    //        tick = 0;
+    //    }
+    //}
+
     private IEnumerator TimeUpdate() {
         while (true) {
             yield return new WaitForSeconds(timeInterval / timeScale);

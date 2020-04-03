@@ -47,22 +47,26 @@ public class P3DObject : MonoBehaviour {
 
         colliders = transform.GetComponentsInChildren<BoxCollider2D>();
 
-        sprite = p3dTarget.GetComponentInChildren<SpriteRenderer>();
-        sprite.shadowCastingMode = UnityEngine.Rendering.ShadowCastingMode.On;
-        sprite.receiveShadows = true;
+        if (p3dTarget) {
+            sprite = p3dTarget.GetComponentInChildren<SpriteRenderer>();
+            sprite.shadowCastingMode = UnityEngine.Rendering.ShadowCastingMode.On;
+            sprite.receiveShadows = true;
+        }
 
         SetPseudo3D();
         SetZPosition(zPosition);
     }
 
     public void SetPseudo3D() {
-        /// x, y 스케일 값이 다르면 문제 생김
-        if (IsStanding) {
-            p3dTarget.localRotation = Quaternion.Euler(-45, 0, p3dTarget.localRotation.eulerAngles.z);
-            p3dTarget.localScale = new Vector3(p3dTarget.localScale.x, p3dTarget.localScale.x * Definitions.SQRT_2, p3dTarget.localScale.z);
-        } else {
-            p3dTarget.localRotation = Quaternion.Euler(0, 0, p3dTarget.localRotation.eulerAngles.z);
-            p3dTarget.localScale = new Vector3(p3dTarget.localScale.x, p3dTarget.localScale.x, p3dTarget.localScale.z);
+        // x, y 스케일 값이 다르면 문제 생김
+        if (p3dTarget) {
+            if (IsStanding) {
+                p3dTarget.localRotation = Quaternion.Euler(-45, 0, p3dTarget.localRotation.eulerAngles.z);
+                p3dTarget.localScale = new Vector3(p3dTarget.localScale.x, p3dTarget.localScale.x * Definitions.SQRT_2, p3dTarget.localScale.z);
+            } else {
+                p3dTarget.localRotation = Quaternion.Euler(0, 0, p3dTarget.localRotation.eulerAngles.z);
+                p3dTarget.localScale = new Vector3(p3dTarget.localScale.x, p3dTarget.localScale.x, p3dTarget.localScale.z);
+            }
         }
     }
 

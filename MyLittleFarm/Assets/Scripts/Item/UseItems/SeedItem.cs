@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SeedItem : IN.PlaceableItem, IN.IRotateable {
+public class SeedItem : IN.PlaceableItem, IN.IRotatable {
 
     /// <summary>
     /// 나중에 아이템 데이터베이스에서 가져와야 함. 임시로 에디터에서 씨앗 프리팹 넣어주기.

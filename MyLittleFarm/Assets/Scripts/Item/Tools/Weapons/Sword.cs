@@ -6,7 +6,7 @@ using System.Linq;
 
 namespace IN {
 
-    public class Sword : NonGridBasedItem, IRotateable {
+    public class Sword : NonGridBasedItem, IRotatable {
         [System.Serializable]
         public struct AttackRange {
             /// <summary>
