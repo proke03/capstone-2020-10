@@ -35,15 +35,17 @@ public class CharacterHand : MonoBehaviour {
         }
     }
 
-    public void Rotate(float angle, int direction) {
-        this.angle = angle;
-
+    public void Flip(int direction) {
         var scale = transform.localScale;
 
         scale.x = direction * Mathf.Abs(scale.x);
         scale.y = direction * Mathf.Abs(scale.y);
 
         transform.localScale = scale;
+    }
+
+    public void Rotate(float angle, int direction) {
+        this.angle = angle;
 
         transform.localRotation = Quaternion.Euler(0, 0, direction * angle + plusAngle + defaultAngle);
     }

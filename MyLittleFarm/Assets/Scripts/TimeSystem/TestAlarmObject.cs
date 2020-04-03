@@ -9,7 +9,10 @@ public class TestAlarmObject : P3DObject {
         P3DInitialize();
 
         alarm = new Alarm();
-        alarm.time = 120;
+        alarm.time = 60 * 2;
+        alarm.notification = () => {
+            Debug.Log("check");
+        };
         TimeManager.Instance.AddAlarm(alarm);
     }
 }
