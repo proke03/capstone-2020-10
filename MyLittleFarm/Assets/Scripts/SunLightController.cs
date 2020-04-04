@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using DG.Tweening;
 
-public class SunLightController : MonoBehaviour {
+public class SunLightController : PausableMonoBehaviour {
     private Light sunLight;
 
     private float yAngle = 0;
@@ -12,9 +12,7 @@ public class SunLightController : MonoBehaviour {
         sunLight = GetComponent<Light>();
     }
 
-    Vector3 dir;
-
-    private void Update() {
+    protected override void PausableUpdate() {
         float sec = TimeManager.Instance.DayToSecond;
 
         //yAngle = SineFunc(sec / TimeManager.DaySecond) * 180 - 90;

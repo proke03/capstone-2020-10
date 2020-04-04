@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
 
-public class TimeManager : MonoBehaviour {
+public class TimeManager : PausableMonoBehaviour {
 
     public static TimeManager Instance;
 
@@ -18,7 +18,7 @@ public class TimeManager : MonoBehaviour {
     public float timeScale = 1.0f;
 
     // 시작 연도
-    public int startYear = 2020;
+    public int startYear = 0;
     public int startMonth = 1;
     public int startDay = 1;
 
@@ -42,12 +42,13 @@ public class TimeManager : MonoBehaviour {
     }
 
     private void Initialize() {
+        time += startYear * YearSecond + (startMonth - 1) * MonthSecond + (startDay - 1) * DaySecond + initHour * HourSecond + initMinute * MinuteSecond;
         //StartCoroutine(TimeUpdate());
     }
 
     //float tick = 0;
 
-    private void Update() {
+    protected override void PausableUpdate() {
         //tick += Time.deltaTime;
         //if (tick >= 1.0f) {
 
@@ -56,6 +57,15 @@ public class TimeManager : MonoBehaviour {
         //    tick = 0;
         //}
         time += Time.deltaTime * timeUnit * timeScale;
+
+        // 임시 알람 코드(성능을 위해서 수정 할 필요가 있음)
+        for (int i = 0; i < alarmList.Count; i++) {
+            if (time >= alarmList[i].TargetTime) {  
+                alarmList[i].notification?.Invoke();
+                alarmList.RemoveAt(i);
+                i--;
+            }
+        }
     }
 
     //private IEnumerator TimeUpdate() {
@@ -81,7 +91,9 @@ public class TimeManager : MonoBehaviour {
     //}
 
     public void AddAlarm(Alarm alarm) {
-        alarmWaitQueue.Enqueue(alarm);
+        alarm.now = time;
+        alarmList.Add(alarm);
+        //alarmWaitQueue.Enqueue(alarm);
     }
 
     public uint Second => (uint)(time % 60);
@@ -113,5 +125,11 @@ public class TimeManager : MonoBehaviour {
         if (GameManager.Instance)
             Handles.Label(GameManager.Instance.player.transform.position, Year + "년 " + Month + "월 " + Day + "일 " + Hour + "시 " + Minute + "분 " + Second + "초" + " | 테스트 : " + DayToSecond);
 #endif
+    }
+
+    protected override void OnPaused() {
+    }
+
+    protected override void OnResumed() {
     }
 }

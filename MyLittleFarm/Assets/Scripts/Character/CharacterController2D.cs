@@ -44,14 +44,14 @@ public class CharacterController2D : P3DObject {
         }
     }
 
-    private void Update() {
+    protected override void PausableUpdate() {
         foreach (var module in moduleList) {
             if (module.isEnabled)
                 module.ModuleUpdate();
         }
     }
 
-    private void FixedUpdate() {
+    protected override void PausableFixedUpdate() {
         foreach (var module in moduleList) {
             if (module.isEnabled)
                 module.ModuleFixedUpdate();

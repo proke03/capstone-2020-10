@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -16,6 +17,13 @@ public class GameManager : MonoBehaviour {
 
     public Cinemachine.CinemachineImpulseSource impulseSource;
 
+    private bool pause = false;
+    public bool IsPaused {
+        get {
+            return pause;
+        }
+    }
+
     private void Awake() {
         if (Instance == null) {
             Instance = this;
@@ -24,6 +32,12 @@ public class GameManager : MonoBehaviour {
 
         } else {
             Destroy(gameObject);
+        }
+    }
+
+    private void Update() {
+        if (Input.GetKeyDown(KeyCode.Space)) {
+            GameManager.Instance.PauseToggle();
         }
     }
 
@@ -39,5 +53,17 @@ public class GameManager : MonoBehaviour {
 
     public void SetTriTargetPosition(Vector3 position) {
         triTarget.transform.position = Vector2Int.FloorToInt(position) + Vector2.one * 0.5f;
+    }
+
+    public void Pause() {
+        pause = true;
+    }
+
+    public void Resume() {
+        pause = false;
+    }
+
+    public void PauseToggle() {
+        pause = !pause;
     }
 }

@@ -7,7 +7,7 @@ using UnityEngine;
 /// pseudo 3d object : 2.5D 오브젝트 클래스
 /// 2D 오브젝트를 2.5D화 할 때 필요한 컴포넌트
 /// </summary>
-public class P3DObject : MonoBehaviour {
+public class P3DObject : PausableMonoBehaviour {
 
     [Range(0.0f, 8.0f)]
     public float zPosition = 0.0f;
