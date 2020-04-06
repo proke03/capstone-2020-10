@@ -17,6 +17,8 @@ public class GameManager : MonoBehaviour {
 
     public Cinemachine.CinemachineImpulseSource impulseSource;
 
+    public static PausableYieldInstruction pauseCheck = new PausableYieldInstruction();
+
     private bool pause = false;
     public bool IsPaused {
         get {

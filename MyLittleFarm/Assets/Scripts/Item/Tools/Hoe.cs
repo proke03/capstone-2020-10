@@ -19,8 +19,11 @@ namespace IN {
         }
 
         protected override IEnumerator UseInRangeGrid(CharacterController2D controller, Vector3Int selected) {
+            yield return GameManager.pauseCheck;
+
             yield return Animation(controller);
 
+            yield return GameManager.pauseCheck;
             var tilePos = new Vector3Int(selected.x, selected.y, 1);
 
             var layer = ts.TilemapGroup.Instance.layers[selected.z];
