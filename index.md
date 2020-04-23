@@ -53,3 +53,6 @@ UI 총괄
 ```
 개인적인 사정으로 아직 역할 배정 안됨
 ```
+
+### 5. 중간 발표 영상
+[![Video Label](http://img.youtube.com/vi/L2v36Jh5avs/0.jpg)](https://youtu.be/L2v36Jh5avs=0s)
